@@ -1,6 +1,7 @@
 package view;
 
 import controller.HitungBiayaSewa;
+import model.enums.TipeSupir;
 
 import javax.swing.*;
 
@@ -20,5 +21,20 @@ public class FormInput {
     public boolean supir() {
         boolean supir = Boolean.parseBoolean(JOptionPane.showInputDialog("Pakai supir?"));
         return supir;
+    }
+
+    public int pilihSupir() {
+        int supir = Integer.parseInt(JOptionPane.showInputDialog("1. Biasa\n2. Profesional\nPilih supir"));
+        return supir;
+    }
+
+    public TipeSupir tipeSupir(int i) {
+        if (i == 1) {
+            return TipeSupir.BIASA;
+        }
+        if (i == 2) {
+            return TipeSupir.PROFESIONAL;
+        }
+        return null;
     }
 }

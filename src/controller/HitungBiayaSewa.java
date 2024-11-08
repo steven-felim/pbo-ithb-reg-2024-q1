@@ -1,7 +1,10 @@
 package controller;
 
 import model.classes.*;
+import model.enums.TipeSupir;
 import view.FormInput;
+
+import static model.enums.TipeSupir.*;
 
 public class HitungBiayaSewa {
     FormInput form = new FormInput();
@@ -68,10 +71,12 @@ public class HitungBiayaSewa {
         l.setHargaBanSerep(0);
         boolean pakaiSupir = form.supir();
         if (pakaiSupir) {
-            if (hari > 5) {
+            int pilihSupir = form.pilihSupir();
+            TipeSupir tipeSupir = form.tipeSupir(pilihSupir);
+            if (tipeSupir == BIASA) {
                 l.setHargaPakaiSupir(0.07 * l.getHarga());
-            } else {
-                l.setHargaPakaiSupir(0.08 * l.getHarga());
+            } else if (tipeSupir == PROFESIONAL) {
+                l.setHargaPakaiSupir(0.1 * l.getHarga());
             }
             sewa += l.getHargaPakaiSupir();
         }
