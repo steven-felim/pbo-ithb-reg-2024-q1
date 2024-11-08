@@ -5,6 +5,8 @@ public class Toyomba extends Mobil {
     private double hargaPakaiSupir;
 
     public Toyomba() {
+        this.setNama("Toyomba");
+        this.setHarga(4500);
         this.hargaBanSerep = hargaBanSerep;
         this.hargaPakaiSupir = hargaPakaiSupir;
     }
