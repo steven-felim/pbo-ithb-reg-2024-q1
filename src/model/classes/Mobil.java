@@ -4,9 +4,7 @@ public abstract class Mobil {
     private String nama;
     private double harga;
 
-    public Mobil(String nama, double harga) {
-        this.nama = nama;
-        this.harga = harga;
+    public Mobil() {
     }
 
     public String getNama() {
